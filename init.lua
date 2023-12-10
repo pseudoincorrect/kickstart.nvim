@@ -73,7 +73,14 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- Detect tabstop and shiftwidth automatically
+ -- range
+ {
+  'francoiscabrol/ranger.vim',
+     dependencies = {
+      'rbgrouleff/bclose.vim'
+      },
+  },
+    -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
@@ -661,3 +668,5 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 
 vim.keymap.set("i", "jj", "<Esc>",  { noremap = true })
+
+vim.opt.cursorline = true
