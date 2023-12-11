@@ -101,7 +101,15 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-
+  {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+      }
+  },
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -260,6 +268,7 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  'ryanoasis/vim-devicons',
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -664,6 +673,13 @@ cmp.setup {
   },
 }
 
+require('neo-tree').setup  ({
+  update_focused_file = {
+    enable = true,
+  }
+})
+
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
@@ -671,3 +687,5 @@ vim.keymap.set("i", "jj", "<Esc>",  { noremap = true })
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.opt.cursorline = true
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
