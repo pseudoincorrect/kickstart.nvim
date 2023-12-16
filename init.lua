@@ -73,6 +73,8 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
+  -- copilot
+  'github/copilot.vim',
  -- range
  {
   'francoiscabrol/ranger.vim',
@@ -689,3 +691,5 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.opt.cursorline = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+
+vim.g.copilot_assume_mapped = true
